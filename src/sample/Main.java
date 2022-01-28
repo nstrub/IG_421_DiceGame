@@ -21,6 +21,7 @@ public class Main extends Application {
         primaryStage.show();
         Button boutonJouer = new Button("Jouer");
         root.setBottom(boutonJouer);
+        boutonJouer.setOnAction(new Ecouteur());
         
 
     }
