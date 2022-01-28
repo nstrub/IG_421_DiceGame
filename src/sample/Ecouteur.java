@@ -6,7 +6,7 @@ public class Ecouteur implements EventHandler<ActionEvent> {
 
     private int compteur;
 
-    public Ecouteur(){
+    public Ecouteur(){ //3 label en entre pour la question 5 ? Random 1-6
         compteur = 0;
     }
 
