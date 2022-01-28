@@ -4,7 +4,7 @@ import javafx.event.EventHandler;
 
 public class Ecouteur implements EventHandler<ActionEvent> {
 
-    int compteur;
+    private int compteur;
 
     public Ecouteur(){
         compteur = 0;
