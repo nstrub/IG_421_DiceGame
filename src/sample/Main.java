@@ -27,10 +27,15 @@ public class Main extends Application {
         Label l1 = new Label("1");
         Label l2 = new Label("1");
         Label l3 = new Label("1");
-        boutonJouer.setOnAction(new Ecouteur(l1,l2,l3));
-        HBox boite = new HBox(l1,l2,l3);
-        boite.setAlignment(Pos.CENTER);
-        root.setCenter(boite);
+        Label l4 = new Label("Nb press bouton : 0  /");
+        Label l5 = new Label(" Nombre 421 : 0");
+        boutonJouer.setOnAction(new Ecouteur(l1,l2,l3,l4,l5));
+        HBox boiteMid = new HBox(l1,l2,l3);
+        HBox boiteHaut = new HBox(l4,l5);
+        boiteMid.setAlignment(Pos.CENTER);
+        boiteHaut.setAlignment(Pos.TOP_CENTER);
+        root.setCenter(boiteMid);
+        root.setTop(boiteHaut);
     }
 
 
