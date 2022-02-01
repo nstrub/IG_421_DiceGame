@@ -41,7 +41,7 @@ public class Ecouteur implements EventHandler<ActionEvent> {
         if(nb1 == 4 && nb2 == 2 && nb3 == 1){
             nbCombi++;
         }
-        labCompteurCombi.setText(" Nombre 421 : " + String.valueOf(nbCombi + " "));
+        labCompteurCombi.setText(" Nombre 421 : " + String.valueOf(nbCombi) + " ");
     }
 
 }

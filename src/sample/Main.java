@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -29,6 +31,11 @@ public class Main extends Application {
         Label l3 = new Label("1");
         Label l4 = new Label("Nb press bouton : 0  /");
         Label l5 = new Label(" Nombre 421 : 0");
+        Button boutonQuit = new Button("");
+        Image imgQuit = new Image("ressources/petitMan.png",48,48,true,true);
+        ImageView icon = new ImageView(imgQuit);
+        boutonQuit.setGraphic(icon);
+        boutonQuit.setOnAction(new EcouteurQuit());
         boutonJouer.setOnAction(new Ecouteur(l1,l2,l3,l4,l5));
         HBox boiteMid = new HBox(l1,l2,l3);
         HBox boiteHaut = new HBox(l4,l5);
@@ -36,6 +43,7 @@ public class Main extends Application {
         boiteHaut.setAlignment(Pos.TOP_CENTER);
         root.setCenter(boiteMid);
         root.setTop(boiteHaut);
+        root.setLeft(boutonQuit);
     }
 
 
