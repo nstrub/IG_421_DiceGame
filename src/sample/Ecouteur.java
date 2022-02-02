@@ -42,10 +42,10 @@ public class Ecouteur implements EventHandler<ActionEvent> {
         String strD1 = "ressources/dice_"+ nb1 +".png";
         String strD2 = "ressources/dice_"+ nb2 +".png";
         String strD3 = "ressources/dice_"+ nb3 +".png";
-        Image imgD1 = new Image(strD1,60,60,true,true);
-        ImageView d1 = new ImageView(imgD1);
 
         //Partie dés
+        Image imgD1 = new Image(strD1,60,60,true,true);
+        ImageView d1 = new ImageView(imgD1);
         lab1.setGraphic(d1);
         Image imgD2 = new Image(strD2,60,60,true,true);
         ImageView d2 = new ImageView(imgD2);
