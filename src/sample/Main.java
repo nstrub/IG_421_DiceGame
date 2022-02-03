@@ -27,20 +27,20 @@ public class Main extends Application {
         Button boutonJouer = new Button("Jouer");
         root.setBottom(boutonJouer);
 
-        Label l1 = new Label();
         Image imgD1 = new Image("ressources/dice_1.png",60,60,true,true);
         ImageView d1 = new ImageView(imgD1);
-        l1.setGraphic(d1);
+        Button bout1 = new Button();
+        bout1.setGraphic(d1);
 
-        Label l2 = new Label();
         Image imgD2 = new Image("ressources/dice_1.png",60,60,true,true);
         ImageView d2 = new ImageView(imgD2);
-        l2.setGraphic(d2);
+        Button bout2 = new Button();
+        bout2.setGraphic(d2);
 
-        Label l3 = new Label();
         Image imgD3 = new Image("ressources/dice_1.png",60,60,true,true);
         ImageView d3 = new ImageView(imgD3);
-        l3.setGraphic(d3);
+        Button bout3 = new Button();
+        bout3.setGraphic(d3);
 
         Label l4 = new Label("Nb press bouton : 0  /");
 
@@ -51,9 +51,9 @@ public class Main extends Application {
         ImageView icon = new ImageView(imgQuit);
         boutonQuit.setGraphic(icon);
         boutonQuit.setOnAction(new EcouteurQuit());
-        boutonJouer.setOnAction(new Ecouteur(l1,l2,l3,l4,l5));
+        boutonJouer.setOnAction(new Ecouteur(bout1,bout2,bout3,l4,l5));
 
-        HBox boiteMid = new HBox(l1,l2,l3);
+        HBox boiteMid = new HBox(bout1,bout2,bout3);
         HBox boiteHaut = new HBox(l4,l5);
         boiteMid.setAlignment(Pos.CENTER);
         boiteHaut.setAlignment(Pos.TOP_CENTER);

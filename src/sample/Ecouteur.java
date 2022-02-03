@@ -1,6 +1,7 @@
 package sample;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -10,15 +11,19 @@ public class Ecouteur implements EventHandler<ActionEvent> {
 
     private int compteur;
     private int nbCombi;
-    private Label lab1;
-    private Label lab2;
-    private Label lab3;
+    private Button lab1;
+    private Button lab2;
+    private Button lab3;
     private Label LabCompteur;
     private Label LabCompteurCombi;
     private Label labCompteur;
     private Label labCompteurCombi;
+    private Boolean bool;
+    int nb1;
+    int nb2;
+    int nb3;
 
-    public Ecouteur(Label l1, Label l2, Label l3, Label l4, Label l5){ //3 label en entre pour la question 5 ? Random 1-6
+    public Ecouteur(Button l1, Button l2, Button l3, Label l4, Label l5){ //3 label en entre pour la question 5 ? Random 1-6
         compteur = 0;
         nbCombi = 0;
         lab1 = l1;
@@ -26,6 +31,7 @@ public class Ecouteur implements EventHandler<ActionEvent> {
         lab3 = l3;
         labCompteur = l4;
         labCompteurCombi = l5;
+        nb1 = nb2 = nb3 = 1;
     }
 
     @Override
@@ -35,10 +41,38 @@ public class Ecouteur implements EventHandler<ActionEvent> {
         compteur++;
         System.out.println("Vous avez appuyé " + compteur +"x sur le bouton !\n");
 
-        //Setup aléatoire des dés
-        int nb1 = (int)(Math.random()*6) + 1;
-        int nb2 = (int)(Math.random()*6) + 1;
-        int nb3 = (int)(Math.random()*6) + 1;
+        //Partie estEnfoncer
+        EcouteurEnfoncer enf1 = new EcouteurEnfoncer(lab1);
+        EcouteurEnfoncer enf2 = new EcouteurEnfoncer(lab2);
+        EcouteurEnfoncer enf3 = new EcouteurEnfoncer(lab3);
+        lab1.setOnAction(enf1);
+        lab2.setOnAction(enf2);
+        lab3.setOnAction(enf3);
+
+
+            //Setup aléatoire des dés
+        //Garde en "reserve" si enfoncer sinon prend l'aléatoire
+        if(lab1.isDisable()){
+            lab1.setDisable(false);
+        }
+        else{
+            nb1 = (int)(Math.random()*6) + 1;
+        }
+
+        if(lab2.isDisable()){
+            lab2.setDisable(false);
+        }
+        else{
+            nb2 = (int)(Math.random()*6) + 1;
+        }
+
+        if(lab3.isDisable()){
+            lab3.setDisable(false);
+        }
+        else{
+            nb3 = (int)(Math.random()*6) + 1;
+        }
+
         String strD1 = "ressources/dice_"+ nb1 +".png";
         String strD2 = "ressources/dice_"+ nb2 +".png";
         String strD3 = "ressources/dice_"+ nb3 +".png";
